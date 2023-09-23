@@ -17,4 +17,5 @@ defmodule ListFilterChallengeTest do
       assert ListFilterChallenge.count_odd_number(list5) == 0
       assert ListFilterChallenge.count_odd_number(list6) == 6
     end
+  end
 end
