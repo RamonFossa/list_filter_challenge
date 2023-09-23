@@ -6,9 +6,13 @@ defmodule ListFilterChallenge do
 
   defp filter_list(list) do
     Enum.flat_map(list, fn string ->
-      case Integer.parse(string) do
-        {int, _rest} -> [int]
-        :error -> []
+      if is_number(string) do
+        [string]
+      else
+        case Integer.parse(string) do
+          {int, _rest} -> [int]
+          :error -> []
+        end
       end
     end)
   end
